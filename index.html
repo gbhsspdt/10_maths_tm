@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10ஆம் வகுப்பு கணிதம் | ஒரு மதிப்பெண் வினாத்தேர்வு</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   10th Maths Test — Stylesheet
+   Theme: bright modern edtech — playful gradients, punchy accents
+   ========================================================== */
+
+:root{
+  --purple:#7C5CFC;
+  --purple-dark:#5F3DD9;
+  --teal:#00C2B8;
+  --teal-dark:#00A69D;
+  --coral:#FF6B5E;
+  --coral-dark:#E5493C;
+  --blue:#3E8EFF;
+  --blue-dark:#2570E8;
+  --pink:#FF5CA8;
+  --pink-dark:#E23F8C;
+  --lime:#8BD450;
+  --lime-dark:#67B22C;
+  --yellow:#FFC845;
+  --ink:#241C3D;
+  --ink-soft:#6E6690;
+  --paper:#ffffff;
+  --cloud:#F6F5FF;
+  --line:#E7E3F7;
+  --good:#22B573;
+  --good-bg:#E3FBEF;
+  --bad:#FF4D5E;
+  --bad-bg:#FFE9EC;
+  --radius-lg:24px;
+  --radius-md:16px;
+  --radius-sm:12px;
+  --shadow-soft:0 16px 40px -16px rgba(124,92,252,0.35);
+  --shadow-tight:0 6px 16px -6px rgba(124,92,252,0.35);
+  --font-display:'Noto Serif Tamil','Baloo 2', 'Fraunces', system-ui, sans-serif;
+  --font-body:'Noto Sans Tamil','Poppins', system-ui, sans-serif;
+  --font-mono:'JetBrains Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(124,92,252,0.16), transparent 40%),
+    radial-gradient(circle at 92% 18%, rgba(0,194,184,0.16), transparent 42%),
+    radial-gradient(circle at 15% 92%, rgba(255,107,94,0.14), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(255,92,168,0.14), transparent 42%),
+    var(--cloud);
+  background-attachment:fixed;
+  min-height:100%;
+}
+
+.d-none{display:none !important;}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(100deg, var(--purple) 0%, #9B6CFC 30%, var(--pink) 65%, var(--coral) 100%);
+  background-size:200% 200%;
+  animation:headerShift 12s ease infinite;
+  color:#fff;
+  box-shadow:0 4px 24px -8px rgba(124,92,252,0.55);
+}
+@keyframes headerShift{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.header-inner{
+  max-width:1000px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+}
+.brand{display:flex; align-items:center; gap:12px;}
+.brand-mark{
+  color:var(--purple-dark); background:#fff; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  width:44px; height:44px; box-shadow:0 4px 12px -2px rgba(0,0,0,0.25);
+  flex-shrink:0; font-size:1.4rem;
+}
+.brand-text{display:flex; flex-direction:column; line-height:1.25;}
+.school-name{
+  font-family:var(--font-display); font-weight:700; letter-spacing:0.02em;
+  font-size:1.05rem; text-transform:uppercase; text-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.subject-name{font-size:0.82rem; color:#fff; opacity:0.92; font-weight:500;}
+.header-status{font-family:var(--font-mono); font-size:0.78rem; color:#fff; opacity:0.85;}
+
+/* ---------- Layout ---------- */
+main#app{max-width:1000px; margin:0 auto; padding:40px 20px 60px;}
+.view{animation:fadeUp .4s ease both;}
+@keyframes fadeUp{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+.card-surface{
+  background:var(--paper);
+  border:2px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-soft);
+}
+
+/* ---------- Home / Hero ---------- */
+.hero-panel{text-align:center; max-width:680px; margin:0 auto 34px;}
+.eyebrow{
+  font-family:var(--font-mono); font-size:0.74rem; letter-spacing:0.06em;
+  text-transform:uppercase; font-weight:600;
+  background:linear-gradient(90deg, var(--purple), var(--pink));
+  color:#fff; display:inline-block;
+  padding:7px 16px; border-radius:999px; margin-bottom:18px;
+  box-shadow:var(--shadow-tight);
+}
+.hero-title{
+  font-family:var(--font-display); font-weight:700; font-size:2.4rem;
+  line-height:1.18; margin:0 0 14px; color:var(--ink);
+}
+.hero-title em{
+  font-style:normal;
+  background:linear-gradient(90deg, var(--purple), var(--pink), var(--coral));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-sub{color:var(--ink-soft); font-size:1.05rem; line-height:1.65;}
+
+.login-card{max-width:540px; margin:0 auto; padding:34px 34px 30px; position:relative; overflow:hidden;}
+.login-card::before{
+  content:""; position:absolute; top:-60px; right:-60px; width:160px; height:160px;
+  background:radial-gradient(circle, rgba(255,200,69,0.35), transparent 70%);
+  border-radius:50%;
+}
+.card-heading{
+  font-family:var(--font-display); font-size:1.5rem; margin:0 0 20px; color:var(--ink); font-weight:700;
+}
+.field-row{margin-bottom:17px; display:flex; flex-direction:column; gap:6px; position:relative;}
+.field-row label{font-size:0.86rem; font-weight:600; color:var(--purple-dark);}
+.req{color:var(--coral);}
+.opt{color:var(--ink-soft); font-weight:400;}
+.field-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 16px;}
+input[type="text"]{
+  font-family:var(--font-body); font-size:0.98rem;
+  padding:12px 14px; border-radius:var(--radius-sm);
+  border:2px solid var(--line); background:var(--cloud);
+  transition:border-color .15s, box-shadow .15s, background .15s;
+}
+input[type="text"]:focus{
+  outline:none; border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(124,92,252,0.15);
+  background:#fff;
+}
+.form-error{color:var(--coral-dark); font-weight:600; font-size:0.85rem; min-height:1.1em; margin-bottom:6px;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  font-family:var(--font-body); font-weight:700; font-size:0.95rem;
+  padding:13px 24px; border-radius:999px; border:none; cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn:active{transform:translateY(0px) scale(0.98);}
+.btn-block{width:100%;}
+.btn-primary{
+  background:linear-gradient(90deg, var(--purple), var(--pink));
+  color:#fff; box-shadow:0 8px 20px -8px rgba(124,92,252,0.6);
+}
+.btn-primary:hover{filter:brightness(1.06); box-shadow:0 12px 26px -8px rgba(124,92,252,0.7);}
+.btn-primary:disabled{background:#cfc8ec; cursor:not-allowed; box-shadow:none; transform:none;}
+.btn-ghost{background:#fff; color:var(--purple-dark); border:2px solid var(--line);}
+.btn-ghost:hover{border-color:var(--purple); background:var(--cloud);}
+.btn-outline{background:#fff; color:var(--blue-dark); border:2px solid var(--blue);}
+.btn-outline:hover{background:#eaf2ff;}
+.btn-finish{
+  background:linear-gradient(90deg, var(--lime), var(--teal));
+  color:#0b3d2e; box-shadow:0 8px 20px -8px rgba(139,212,80,0.6);
+}
+.btn-finish:hover{filter:brightness(1.05);}
+
+/* ---------- Chapter selection ---------- */
+.section-heading{text-align:center; max-width:680px; margin:0 auto 30px;}
+.section-heading h2{font-family:var(--font-display); font-size:2rem; color:var(--ink); margin:10px 0 8px; font-weight:700;}
+.section-sub{color:var(--ink-soft);}
+.chapter-grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
+  gap:18px;
+}
+.chapter-card{
+  background:var(--paper); border:2px solid var(--line); border-radius:var(--radius-md);
+  padding:22px; cursor:pointer; text-align:left;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  box-shadow:0 6px 18px -10px rgba(36,28,61,0.18);
+  display:flex; flex-direction:column; gap:6px;
+  position:relative; overflow:hidden;
+}
+.chapter-card::after{
+  content:""; position:absolute; inset:0 0 auto 0; height:6px;
+  background:var(--accent, var(--purple));
+}
+.chapter-card:hover{
+  transform:translateY(-5px) rotate(-0.3deg);
+  box-shadow:0 20px 34px -14px rgba(36,28,61,0.28);
+  border-color:var(--accent, var(--purple));
+}
+.chapter-card .chapter-icon{
+  font-size:1.9rem; margin-bottom:4px; line-height:1;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+.chapter-card .unit-tag{
+  font-family:var(--font-mono); font-size:0.7rem; color:var(--accent-dark, var(--purple-dark));
+  letter-spacing:0.04em; text-transform:uppercase; font-weight:700;
+}
+.chapter-card .chapter-title{
+  font-family:var(--font-display); font-size:1.2rem; color:var(--ink); font-weight:700;
+}
+.chapter-card .chapter-count{font-size:0.82rem; color:var(--ink-soft); font-weight:500;}
+.chapter-card .go-arrow{
+  margin-top:auto; align-self:flex-end; color:var(--accent-dark, var(--purple-dark));
+  font-size:1.3rem; font-weight:700;
+}
+
+.chapter-card.c-purple{--accent:var(--purple); --accent-dark:var(--purple-dark);}
+.chapter-card.c-teal{--accent:var(--teal); --accent-dark:var(--teal-dark);}
+.chapter-card.c-coral{--accent:var(--coral); --accent-dark:var(--coral-dark);}
+.chapter-card.c-blue{--accent:var(--blue); --accent-dark:var(--blue-dark);}
+.chapter-card.c-pink{--accent:var(--pink); --accent-dark:var(--pink-dark);}
+.chapter-card.c-lime{--accent:var(--lime); --accent-dark:var(--lime-dark);}
+
+/* ---------- Test view ---------- */
+.test-topbar{display:flex; flex-direction:column; gap:12px; margin-bottom:26px;}
+.test-meta{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+.chip{
+  background:linear-gradient(90deg, var(--purple), var(--pink)); color:#fff; font-size:0.82rem;
+  padding:7px 16px; border-radius:999px; font-weight:700; box-shadow:var(--shadow-tight);
+}
+.qcount{font-family:var(--font-mono); color:var(--ink-soft); font-size:0.85rem; font-weight:600;}
+.progress-track{height:10px; background:var(--line); border-radius:999px; overflow:hidden;}
+.progress-fill{
+  height:100%; width:0%;
+  background:linear-gradient(90deg, var(--lime), var(--teal), var(--blue), var(--purple), var(--pink), var(--coral));
+  background-size:300% 100%;
+  transition:width .3s ease;
+  animation:rainbowMove 6s linear infinite;
+}
+@keyframes rainbowMove{0%{background-position:0% 0;} 100%{background-position:150% 0;}}
+
+.question-card{padding:32px 34px; margin-bottom:22px; position:relative;}
+.qnum{
+  font-family:var(--font-display); color:#fff; font-weight:700; margin-bottom:14px;
+  background:linear-gradient(90deg, var(--purple), var(--pink)); display:inline-block;
+  padding:5px 16px; border-radius:999px; font-size:0.95rem;
+}
+.qtext{font-family:var(--font-display); font-size:1.35rem; line-height:1.5; color:var(--ink); margin:0 0 24px; font-weight:600;}
+.options-list{display:flex; flex-direction:column; gap:12px;}
+.option-item{
+  display:flex; align-items:center; gap:14px;
+  padding:14px 18px; border:2px solid var(--line); border-radius:var(--radius-sm);
+  cursor:pointer; transition:border-color .15s, background .15s, transform .1s;
+  background:var(--cloud);
+}
+.option-item:hover{border-color:var(--purple); background:#f0ecff; transform:translateX(2px);}
+.option-item.selected{
+  border-color:var(--purple); background:linear-gradient(90deg, #efe9ff, #ffeef7);
+  box-shadow:0 4px 14px -6px rgba(124,92,252,0.35);
+}
+.option-item input{accent-color:var(--purple); width:18px; height:18px; flex-shrink:0;}
+.option-label{font-size:0.99rem; font-weight:500;}
+
+.test-nav{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+
+/* ---------- Result view ---------- */
+.result-card{padding:36px 36px 32px; max-width:600px; margin:0 auto; position:relative; overflow:hidden;}
+.result-card::before{
+  content:""; position:absolute; top:-80px; left:-80px; width:220px; height:220px;
+  background:radial-gradient(circle, rgba(255,200,69,0.3), transparent 70%);
+  border-radius:50%;
+}
+.result-card::after{
+  content:""; position:absolute; bottom:-90px; right:-90px; width:220px; height:220px;
+  background:radial-gradient(circle, rgba(0,194,184,0.25), transparent 70%);
+  border-radius:50%;
+}
+.result-header{text-align:center; margin-bottom:22px; position:relative;}
+.result-header h2{font-family:var(--font-display); color:var(--ink); margin:0 0 4px; font-weight:700; font-size:1.7rem;}
+.result-sub{color:var(--ink-soft); font-size:0.94rem; font-weight:500;}
+.result-student{
+  display:grid; grid-template-columns:1fr 1fr; gap:12px 20px;
+  background:var(--cloud); border:2px solid var(--line); border-radius:var(--radius-sm);
+  padding:16px 18px; margin-bottom:28px; position:relative;
+}
+.result-student div{display:flex; flex-direction:column; gap:2px;}
+.result-student span{font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); font-weight:600;}
+.result-student strong{font-size:0.95rem; color:var(--ink);}
+
+.score-ring-wrap{position:relative; width:150px; height:150px; margin:0 auto 24px;}
+.score-ring{width:150px; height:150px; transform:rotate(-90deg);}
+.ring-bg{fill:none; stroke:var(--line); stroke-width:13;}
+.ring-fg{fill:none; stroke:var(--good); stroke-width:13; stroke-linecap:round; stroke-dasharray:377; stroke-dashoffset:377; transition:stroke-dashoffset 1s ease;}
+.score-ring-label{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.score-ring-label strong{font-family:var(--font-display); font-size:2rem; color:var(--ink); font-weight:700;}
+.score-ring-label span{font-family:var(--font-mono); font-size:0.85rem; color:var(--ink-soft); font-weight:700;}
+
+.result-stats{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; position:relative;}
+.stat{
+  background:var(--cloud); border:2px solid var(--line); border-radius:var(--radius-sm);
+  padding:15px 24px; text-align:center; min-width:110px;
+}
+.stat strong{display:block; font-family:var(--font-display); font-size:1.5rem; color:var(--ink); font-weight:700;}
+.stat span{font-size:0.78rem; color:var(--ink-soft); font-weight:600;}
+.stat.correct{background:var(--good-bg);}
+.stat.correct strong{color:var(--good);}
+.stat.wrong{background:var(--bad-bg);}
+.stat.wrong strong{color:var(--bad);}
+
+.result-actions{
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:28px;
+}
+
+.sheet-save-status{
+  text-align:center; font-size:0.85rem; font-weight:600; color:var(--ink-soft);
+  max-width:500px; margin:16px auto 0; min-height:1.2em;
+}
+.sheet-save-status.status-ok{color:var(--good);}
+.sheet-save-status.status-warn{color:var(--yellow); color:#b4890f;}
+.sheet-save-status.status-error{color:var(--bad);}
+
+/* ---------- Review view ---------- */
+.review-item{
+  background:var(--paper); border:2px solid var(--line); border-radius:var(--radius-md);
+  padding:20px 22px; margin-bottom:16px;
+  box-shadow:0 4px 14px -8px rgba(36,28,61,0.15);
+}
+.review-item .rq-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px;}
+.review-item .rq-num{
+  font-family:var(--font-mono); color:#fff; font-weight:700; font-size:0.78rem;
+  background:var(--purple); display:inline-block; padding:3px 10px; border-radius:999px; margin-bottom:6px;
+}
+.review-item .rq-text{font-weight:600; color:var(--ink); margin:2px 0 0; font-size:1.02rem;}
+.review-icon{font-size:1.2rem; flex-shrink:0;}
+.review-icon.correct{color:var(--good);}
+.review-icon.wrong{color:var(--bad);}
+.review-options{display:flex; flex-direction:column; gap:7px; margin-top:10px;}
+.review-option{
+  padding:10px 14px; border-radius:var(--radius-sm); border:2px solid var(--line); font-size:0.94rem; font-weight:500;
+}
+.review-option.correct-answer{background:var(--good-bg); border-color:var(--good); color:#0d6b3f; font-weight:700;}
+.review-option.wrong-selected{background:var(--bad-bg); border-color:var(--bad); color:#a3212f; font-weight:700;}
+.review-option.unanswered-tag{font-size:0.78rem; color:var(--bad); margin-top:6px; display:inline-block; font-weight:700;}
+
+
+/* ---------- Test Mode Selector ---------- */
+.mode-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+  gap:14px;
+  margin-bottom:26px;
+}
+.mode-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  text-align:left;
+  padding:18px 20px;
+  border-radius:var(--radius-md);
+  border:2px solid var(--line);
+  background:var(--paper);
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  font-family:var(--font-body);
+}
+.mode-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(124,92,252,0.16);
+  border-color:var(--purple);
+}
+.mode-card .mode-icon{ font-size:1.7rem; }
+.mode-card .mode-title{ font-weight:700; color:var(--ink); font-size:1.02rem; }
+.mode-card .mode-sub{ font-size:0.82rem; color:var(--ink-soft); }
+.mode-card.mode-disabled{ opacity:0.5; cursor:not-allowed; }
+.mode-card.mode-disabled:hover{ transform:none; box-shadow:none; border-color:var(--line); }
+
+.mode-panel{
+  background:var(--cloud);
+  border:2px dashed var(--line);
+  border-radius:var(--radius-md);
+  padding:20px;
+  margin-bottom:26px;
+}
+.mode-panel > label{ font-weight:600; font-size:0.85rem; color:var(--ink-soft); display:block; margin-bottom:8px; }
+.mode-panel input[type="number"]{
+  width:120px;
+  padding:10px 12px;
+  border-radius:var(--radius-sm);
+  border:2px solid var(--line);
+  font-family:var(--font-body);
+  font-size:1rem;
+  margin-right:12px;
+  vertical-align:middle;
+}
+.custom-toolbar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.btn-sm{ padding:8px 14px; font-size:0.82rem; }
+.custom-total{ font-size:0.82rem; color:var(--ink-soft); font-weight:600; margin-left:auto; }
+.custom-chapter-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:8px;
+  max-height:320px;
+  overflow-y:auto;
+  padding:4px;
+  margin-bottom:16px;
+}
+.custom-chapter-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:var(--radius-sm);
+  border:2px solid var(--line);
+  background:var(--paper);
+  cursor:pointer;
+  font-size:0.88rem;
+}
+.custom-chapter-item:hover{ border-color:var(--purple); }
+.custom-chapter-item input[type="checkbox"]{ width:17px; height:17px; accent-color:var(--purple); flex-shrink:0; }
+.custom-chapter-item .cc-title{ flex:1; color:var(--ink); font-weight:500; }
+.custom-chapter-item .cc-count{ color:var(--ink-soft); font-size:0.78rem; font-weight:600; }
+
+
+/* ---------- Footer ---------- */
+.site-footer{
+  text-align:center; padding:24px; color:var(--ink-soft); font-size:0.82rem; font-weight:500;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:600px){
+  .hero-title{font-size:2rem;}
+  .login-card{padding:28px 22px;}
+  .field-grid{grid-template-columns:1fr;}
+  .question-card{padding:24px 20px;}
+  .result-student{grid-template-columns:1fr 1fr;}
+  .test-nav{flex-wrap:wrap;}
+  .test-nav .btn{flex:1 1 auto;}
+}
+
+/* ---------- Print ---------- */
+@media print{
+  .site-header, .site-footer, .no-print{display:none !important;}
+  body{background:#fff;}
+  main#app{padding:0; max-width:100%;}
+  .card-surface{box-shadow:none; border:1px solid #ccc;}
+}
+
+
+/* ---------- Maths image questions ---------- */
+.q-img{display:block; max-width:100%; height:auto; margin:0 0 6px; background:#fff; border:2px solid var(--line); border-radius:var(--radius-sm); padding:8px;}
+.img-missing{background:var(--bad-bg); color:#a3212f; border:2px solid var(--bad); border-radius:var(--radius-sm); padding:12px 14px; font:600 0.9rem/1.4 system-ui,sans-serif; word-break:break-all;}
+.options-list.img-options{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+.img-options .option-item{justify-content:center; text-align:center; padding:16px 6px; transform:none !important;}
+.img-options .option-item input{position:absolute; opacity:0; pointer-events:none;}
+.img-options .option-label{font-size:1.15rem; font-weight:700;}
+.img-review-options{display:grid !important; grid-template-columns:repeat(4,1fr); gap:8px !important;}
+.img-review-options .review-option{text-align:center; font-weight:700;}
+@media (max-width:480px){ .img-options .option-item{padding:14px 2px;} .img-options .option-label{font-size:1rem;} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">📐</div>
+      <div class="brand-text">
+        <span class="school-name" id="schoolNameDisplay">அரசு ஆண்கள் மேல்நிலைப் பள்ளி, பொதட்டூர்பேட்டை-631208</span>
+        <span class="subject-name">10ஆம் வகுப்பு கணிதம் · தமிழ்வழி</span>
+      </div>
+    </div>
+    <div class="header-status" id="headerStatus"></div>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ============ HOME / LOGIN VIEW ============ -->
+  <section class="view" id="view-home">
+    <div class="hero-panel">
+      <p class="eyebrow">ஒரு மதிப்பெண் வினாக்கள் · 125 வினாக்கள் · 8 இயல்கள்</p>
+      <h1 class="hero-title">10ஆம் வகுப்பு கணிதம் (தமிழ்வழி) — <em>அனைத்தும் ஒரு மதிப்பெண், ஒழுங்காக வரிசைப்படுத்தப்பட்டவை.</em></h1>
+      <p class="hero-sub">ஒவ்வொரு முறையும் புதிதாகக் கலைக்கப்படும் வினாக்கள், இயல் வாரியாக. ஒரு இயலைத் தேர்ந்தெடுத்து பயிற்சி செய்து உங்கள் திறனை அறியுங்கள்.</p>
+    </div>
+
+    <div class="login-card card-surface">
+      <h2 class="card-heading">மாணவர் விவரங்கள் <span style="font-size:0.7em;color:var(--ink-soft);font-weight:500;">/ Student Details</span></h2>
+      <form id="loginForm" novalidate>
+        <div class="field-row">
+          <label for="studentName">மாணவர் பெயர் <span class="req">*</span> <span class="opt">/ Student Name</span></label>
+          <input type="text" id="studentName" placeholder="எ.கா. SURESH" required>
+        </div>
+        <div class="field-row">
+          <label for="schoolName">பள்ளியின் பெயர் <span class="req">*</span> <span class="opt">/ School Name</span></label>
+          <input type="text" id="schoolName" placeholder="எ.கா. GBHSS PODATURPET" required>
+        </div>
+        <div class="field-grid">
+          <div class="field-row">
+            <label for="registerNumber">பதிவு எண் <span class="opt">(விருப்பத்தேர்வு)</span></label>
+            <input type="text" id="registerNumber" placeholder="எ.கா. 240113">
+          </div>
+          <div class="field-row">
+            <label for="studentClass">Class</label>
+            <input type="text" id="studentClass" placeholder="எ.கா. X - B">
+          </div>
+        </div>
+        <div class="form-error" id="formError"></div>
+        <button type="submit" class="btn btn-primary btn-block">தேர்வைத் தொடங்கு &rarr;</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CHAPTER SELECTION VIEW ============ -->
+  <section class="view d-none" id="view-chapters">
+    <div class="section-heading">
+      <p class="eyebrow">வணக்கம், <span id="chapterGreetName">Student</span></p>
+      <h2>தொடங்க ஒரு இயலைத் தேர்ந்தெடுக்கவும்</h2>
+      <p class="section-sub">ஒவ்வொரு இயலும் ஒரு தனித்தேர்வு. ஒவ்வொரு முறையும் வினாக்களும் விடைகளும் கலைக்கப்படும்.</p>
+    </div>
+    
+        <div class="mode-grid" id="modeGrid">
+          <button type="button" class="mode-card mode-mixed" id="btnModeMixed">
+            <span class="mode-icon">🎲</span>
+            <span class="mode-title">கலப்புத் தேர்வு</span>
+            <span class="mode-sub">எல்லா பாடங்களிலிருந்தும் கலந்த வினாக்கள்</span>
+          </button>
+          <button type="button" class="mode-card mode-custom" id="btnModeCustom">
+            <span class="mode-icon">🧩</span>
+            <span class="mode-title">விருப்பத் தேர்வு</span>
+            <span class="mode-sub">நீங்கள் விரும்பும் பாடங்களைத் தேர்ந்தெடுக்கவும்</span>
+          </button>
+          <button type="button" class="mode-card mode-weak" id="btnModeWeak">
+            <span class="mode-icon">🧠</span>
+            <span class="mode-title">பலவீன வினாக்கள்</span>
+            <span class="mode-sub"><span id="weakCount">0</span> மறுபார்வைக்கு</span>
+          </button>
+        </div>
+
+        <div class="mode-panel d-none" id="panelMixed">
+          <label for="mixedCount">வினாக்களின் எண்ணிக்கை</label>
+          <input type="number" id="mixedCount" min="5" max="500" value="25">
+          <button type="button" class="btn btn-primary" id="btnStartMixed">கலப்புத் தேர்வைத் தொடங்கு &rarr;</button>
+        </div>
+
+        <div class="mode-panel d-none" id="panelCustom">
+          <div class="custom-toolbar">
+            <button type="button" class="btn btn-ghost btn-sm" id="btnSelectAll">அனைத்தையும் தேர்வு செய்</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="btnSelectNone">அழி</button>
+            <span class="custom-total" id="customTotalCount">0</span>
+          </div>
+          <div class="custom-chapter-list" id="customChapterList"></div>
+          <button type="button" class="btn btn-primary" id="btnStartCustom">விருப்பத் தேர்வைத் தொடங்கு &rarr;</button>
+        </div>
+
+        <div class="chapter-grid" id="chapterGrid"></div>
+  </section>
+
+  <!-- ============ TEST VIEW ============ -->
+  <section class="view d-none" id="view-test">
+    <div class="test-topbar">
+      <div class="test-meta">
+        <span class="chip" id="testChapterName">Chapter</span>
+        <span class="qcount" id="testQCount">Question 1 of 20</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="question-card card-surface">
+      <div class="qnum" id="qNumber">Q1</div>
+      <h3 class="qtext" id="qText">Question text goes here</h3>
+      <div class="options-list" id="optionsList"></div>
+    </div>
+
+    <div class="test-nav">
+      <button class="btn btn-ghost" id="btnPrev">&larr; முந்தையது</button>
+      <button class="btn btn-primary" id="btnNext">அடுத்தது &rarr;</button>
+      <button class="btn btn-finish d-none" id="btnFinish">முடிக்க ✓</button>
+    </div>
+  </section>
+
+  <!-- ============ RESULT VIEW ============ -->
+  <section class="view d-none" id="view-result">
+    <div class="result-card card-surface" id="printArea">
+      <div class="result-header">
+        <h2>முடிவுச் சுருக்கம்</h2>
+        <p class="result-sub" id="resultChapter">Chapter Name</p>
+      </div>
+      <div class="result-student">
+        <div><span>பெயர்</span><strong id="rsName">-</strong></div>
+        <div><span>பள்ளி</span><strong id="rsSchool">-</strong></div>
+        <div><span>வகுப்பு</span><strong id="rsClass">-</strong></div>
+        <div><span>பதிவு எண்</span><strong id="rsReg">-</strong></div>
+      </div>
+
+      <div class="score-ring-wrap">
+        <svg viewBox="0 0 140 140" class="score-ring">
+          <defs>
+            <linearGradient id="scoreGradGood" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8BD450"/>
+              <stop offset="50%" stop-color="#00C2B8"/>
+              <stop offset="100%" stop-color="#7C5CFC"/>
+            </linearGradient>
+            <linearGradient id="scoreGradBad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6B5E"/>
+              <stop offset="100%" stop-color="#FF4D5E"/>
+            </linearGradient>
+          </defs>
+          <circle cx="70" cy="70" r="60" class="ring-bg"/>
+          <circle cx="70" cy="70" r="60" class="ring-fg" id="ringFg"/>
+        </svg>
+        <div class="score-ring-label">
+          <strong id="scorePercent">0%</strong>
+          <span id="scoreGrade">-</span>
+        </div>
+      </div>
+
+      <div class="result-stats">
+        <div class="stat"><strong id="stTotal">0</strong><span>மொத்த வினாக்கள்</span></div>
+        <div class="stat correct"><strong id="stCorrect">0</strong><span>சரி</span></div>
+        <div class="stat wrong"><strong id="stWrong">0</strong><span>தவறு</span></div>
+      </div>
+    </div>
+
+    <p class="sheet-save-status no-print" id="sheetSaveStatus"></p>
+
+    <div class="result-actions no-print">
+      <button class="btn btn-ghost" id="btnPrint">முடிவை அச்சிடு</button>
+      <button class="btn btn-ghost" id="btnDownload">PDF ஆக பதிவிறக்கு</button>
+      <button class="btn btn-primary" id="btnReview">விடைகளை மறுபார்வை &rarr;</button>
+      <button class="btn btn-outline" id="btnRestart">மீண்டும் தேர்வு</button>
+    </div>
+  </section>
+
+  <!-- ============ REVIEW VIEW ============ -->
+  <section class="view d-none" id="view-review">
+    <div class="section-heading">
+      <p class="eyebrow">விடை மறுபார்வை</p>
+      <h2>ஒவ்வொரு வினாவும், சரியான விடையுடன்</h2>
+    </div>
+    <div id="reviewList"></div>
+    <div class="result-actions no-print">
+      <button class="btn btn-outline" id="btnBackToChapters">வேறு இயலைத் தேர்வு செய்</button>
+      <button class="btn btn-primary" id="btnRestart2">இந்த இயலை மீண்டும் தொடங்கு</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>10ஆம் வகுப்பு கணிதம் ஒரு மதிப்பெண் வினாத்தேர்வு · தமிழ்வழி · தன்னியல்பு பயிற்சிக்காக உருவாக்கப்பட்டது</p>
+</footer>
+
+<script>
+/* ==========================================================
+   10ஆம் வகுப்பு கணிதம் ஒரு மதிப்பெண் வினா வங்கி — தமிழ்வழி
+   8 இயல்களிலிருந்தும் தொகுக்கப்பட்ட வினாக்கள்.
+   Each question: { q, options:[4], answer: index }
+   ========================================================== */
+
+const QUESTION_BANK = [
+ {
+  "chapter": "உறவுகளும் சார்புகளும்",
+  "unit": "Chapter 1",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/1.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/2.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/3.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/4.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/5.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/6.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/7.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/8.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/9.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/10.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/11.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/12.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/13.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/14.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch1/15.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ {
+  "chapter": "எண்களும் தொடர்வரிசைகளும்",
+  "unit": "Chapter 2",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/1.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/2.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/3.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/4.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/5.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/6.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/7.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/8.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/9.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/10.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/11.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/12.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/13.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/14.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch2/15.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ {
+  "chapter": "இயற்கணிதம்",
+  "unit": "Chapter 3",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/1.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/2.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/3.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/4.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/5.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/6.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/7.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/8.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/9.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/10.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/11.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/12.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/13.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/14.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/15.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/16.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/17.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/18.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/19.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch3/20.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ {
+  "chapter": "வடிவியல்",
+  "unit": "Chapter 4",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/1.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/2.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/3.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/4.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/5.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/6.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/7.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/8.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/9.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/10.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/11.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/12.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/13.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/14.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch4/15.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ {
+  "chapter": "ஆயத்தொலைவு வடிவியல்",
+  "unit": "Chapter 5",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/1.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/2.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/3.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/4.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/5.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/6.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/7.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/8.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/9.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/10.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/11.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/12.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/13.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/14.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch5/15.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ {
+  "chapter": "முக்கோணவியல்",
+  "unit": "Chapter 6",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/1.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/2.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/3.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/4.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/5.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/6.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/7.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/8.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/9.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/10.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/11.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/12.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/13.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/14.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch6/15.png",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ {
+  "chapter": "அளவியல்",
+  "unit": "Chapter 7",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/1.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/2.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/3.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/4.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/5.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/6.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/7.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/8.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/9.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/10.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/11.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/12.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/13.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/14.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch7/15.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ {
+  "chapter": "புள்ளியியலும் நிகழ்தகவும்",
+  "unit": "Chapter 8",
+  "questions": [
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/1.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/2.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/3.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/4.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/5.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/6.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/7.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/8.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/9.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/10.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/11.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/12.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/13.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/14.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "",
+    "img": "maths-images/tamil/ch8/15.jpg",
+    "options": [
+     "(அ)",
+     "(ஆ)",
+     "(இ)",
+     "(ஈ)"
+    ],
+    "answer": 3
+   }
+  ]
+ }
+];
+
+</script>
+<script>
+/* ==========================================================
+   10ஆம் வகுப்பு கணிதம் ஒரு மதிப்பெண் வினாத்தேர்வு — செயலி தர்க்கம்
+   ========================================================== */
+
+/* =========================================================
+   GOOGLE SHEETS CONFIG
+   Paste your deployed Google Apps Script Web App URL below.
+   See the accompanying "Google Apps Script" code + setup
+   instructions to create this URL.
+   ========================================================= */
+const SHEETS_API_URL = "https://script.google.com/macros/s/AKfycbycjxIj7eeFTlZXFLI5mS2wfK3UPDdhV2BAl9Uz3xD-g5fGIJbw0KFhqTN0jEU2qcYLxQ/exec";
+const SUBJECT_KEY = "maths";
+const SUBJECT_LABEL = "Maths";
+const MEDIUM_KEY = "tm";
+const MEDIUM_LABEL = "Tamil Medium";
+const WEAK_KEY = "weak_" + SUBJECT_KEY + "_" + MEDIUM_KEY;
+
+window.addEventListener("error", function(e){
+  showFatalError(e.message + (e.filename ? " (" + e.filename + ":" + e.lineno + ")" : ""));
+});
+
+function showFatalError(msg){
+  let banner = document.getElementById("fatalErrorBanner");
+  if(!banner){
+    banner = document.createElement("div");
+    banner.id = "fatalErrorBanner";
+    banner.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;background:#ffdcdc;color:#7a1010;padding:14px 18px;font:600 14px system-ui,sans-serif;border-bottom:3px solid #ff4d5e;";
+    document.body.prepend(banner);
+  }
+  banner.textContent = "⚠ Something went wrong loading the test: " + msg;
+}
+
+(function(){
+  "use strict";
+
+  try{
+
+  if(typeof QUESTION_BANK === "undefined" || !Array.isArray(QUESTION_BANK) || QUESTION_BANK.length === 0){
+    showFatalError("Question bank data did not load. Please re-download the file and open it directly in your browser.");
+    return;
+  }
+
+  // ---------- State ----------
+  const state = {
+    student: { name:"", school:"", reg:"", cls:"" },
+    chapterIndex: null,
+    testType: "chapter",
+    testLabel: "",
+    testMeta: {},
+    questions: [],
+    currentQ: 0,
+    answers: []
+  };
+
+  // ---------- Utility ----------
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function el(id){ return document.getElementById(id); }
+
+  function showView(id){
+    document.querySelectorAll(".view").forEach(v => v.classList.add("d-none"));
+    el(id).classList.remove("d-none");
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+
+  // ---------- Home / Login ----------
+  el("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = el("studentName").value.trim();
+    const school = el("schoolName").value.trim();
+    const reg = el("registerNumber").value.trim();
+    const cls = el("studentClass").value.trim();
+
+    if(!name || !school){
+      el("formError").textContent = "மாணவர் பெயரும் பள்ளியின் பெயரும் அவசியம்.";
+      return;
+    }
+    el("formError").textContent = "";
+
+    state.student = { name, school, reg, cls };
+    el("schoolNameDisplay").textContent = school.toUpperCase();
+    el("chapterGreetName").textContent = name;
+
+    buildChapterGrid();
+    showView("view-chapters");
+  });
+
+  // ---------- Chapter Selection ----------
+  const CHAPTER_ICONS = ["🔗","🔢","🧮","📐","📍","📏","🧊","📊"];
+  const CHAPTER_COLORS = ["c-purple","c-teal","c-coral","c-blue","c-pink","c-lime"];
+
+  function buildChapterGrid(){
+    const grid = el("chapterGrid");
+    grid.innerHTML = "";
+    QUESTION_BANK.forEach((ch, idx) => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "chapter-card " + CHAPTER_COLORS[idx % CHAPTER_COLORS.length];
+      card.innerHTML = `
+        <span class="chapter-icon">${CHAPTER_ICONS[idx % CHAPTER_ICONS.length]}</span>
+        <span class="unit-tag">${ch.unit}</span>
+        <span class="chapter-title">${ch.chapter}</span>
+        <span class="chapter-count">${ch.questions.length} வினாக்கள்</span>
+        <span class="go-arrow">&rarr;</span>
+      `;
+      card.addEventListener("click", () => startTest(idx));
+      grid.appendChild(card);
+    });
+    refreshWeakBadge();
+  }
+
+  // ---------- Test Flow ----------
+  function startTest(chapterIndex){
+    const chapter = QUESTION_BANK[chapterIndex];
+    const withOrigin = chapter.questions.map((q, qi) => ({ q: q.q, img: q.img, options: q.options, answer: q.answer, _ch: chapterIndex, _qi: qi }));
+    beginTest(withOrigin, chapter.chapter, "chapter", { chapterIndex: chapterIndex });
+  }
+
+  // ---------- Weak Question Tracking ----------
+  function loadWeakMap(){
+    try{ return JSON.parse(localStorage.getItem(WEAK_KEY) || "{}"); }catch(e){ return {}; }
+  }
+  function saveWeakMap(map){
+    try{ localStorage.setItem(WEAK_KEY, JSON.stringify(map)); }catch(e){}
+  }
+  function refreshWeakBadge(){
+    const map = loadWeakMap();
+    const count = Object.keys(map).length;
+    const badgeEl = el("weakCount");
+    if(badgeEl) badgeEl.textContent = count;
+    const cardEl = el("btnModeWeak");
+    if(cardEl) cardEl.classList.toggle("mode-disabled", count === 0);
+  }
+  function updateWeakFromResult(){
+    const map = loadWeakMap();
+    state.questions.forEach((q, i) => {
+      if(q._ch === undefined || q._ch === null || q._qi === undefined) return;
+      const key = q._ch + ":" + q._qi;
+      const isCorrect = state.answers[i] === q.answer;
+      if(isCorrect){
+        delete map[key];
+      } else {
+        const orig = QUESTION_BANK[q._ch].questions[q._qi];
+        map[key] = { ch: q._ch, qi: q._qi, q: orig.q, img: orig.img, options: orig.options, answer: orig.answer };
+      }
+    });
+    saveWeakMap(map);
+    refreshWeakBadge();
+  }
+
+  // ---------- Mixed / Custom / Weak Test Builders ----------
+  function getAllQuestionsWithOrigin(chapterIdxs){
+    const idxs = (chapterIdxs && chapterIdxs.length) ? chapterIdxs : QUESTION_BANK.map((_, i) => i);
+    const list = [];
+    idxs.forEach(ci => {
+      QUESTION_BANK[ci].questions.forEach((q, qi) => {
+        list.push({ q: q.q, img: q.img, options: q.options, answer: q.answer, _ch: ci, _qi: qi });
+      });
+    });
+    return list;
+  }
+
+  function beginTest(rawQuestions, label, testType, meta){
+    state.testType = testType;
+    state.testLabel = label;
+    state.testMeta = meta || {};
+    state.chapterIndex = (meta && typeof meta.chapterIndex === "number") ? meta.chapterIndex : null;
+
+    const shuffledQuestions = shuffle(rawQuestions).map(orig => {
+      const optionPairs = orig.options.map((text, i) => ({ text, isCorrect: i === orig.answer }));
+      // Image questions carry their own printed options, so keep A-D / அ-ஈ order fixed
+      const shuffledOptions = orig.img ? optionPairs : shuffle(optionPairs);
+      const newAnswerIndex = shuffledOptions.findIndex(o => o.isCorrect);
+      return {
+        q: orig.q,
+        img: orig.img,
+        options: shuffledOptions.map(o => o.text),
+        answer: newAnswerIndex,
+        _ch: orig._ch,
+        _qi: orig._qi
+      };
+    });
+
+    state.questions = shuffledQuestions;
+    state.answers = new Array(shuffledQuestions.length).fill(null);
+    state.currentQ = 0;
+
+    el("testChapterName").textContent = label;
+    renderQuestion();
+    showView("view-test");
+  }
+
+  function startMixedTest(count){
+    const all = getAllQuestionsWithOrigin();
+    const n = Math.max(1, Math.min(count || 25, all.length));
+    const picked = shuffle(all).slice(0, n);
+    const label = "கலப்புத் தேர்வு · " + n + " வினாக்கள்";
+    beginTest(picked, label, "mixed", { count: n });
+  }
+
+  function startCustomTest(chapterIdxs){
+    if(!chapterIdxs || !chapterIdxs.length){
+      alert("தயவுசெய்து குறைந்தது ஒரு பாடத்தையாவது தேர்ந்தெடுக்கவும்.");
+      return;
+    }
+    const list = getAllQuestionsWithOrigin(chapterIdxs);
+    const label = "விருப்பத் தேர்வு · " + chapterIdxs.length + " பாடங்கள் · " + list.length + " வினாக்கள்";
+    beginTest(list, label, "custom", { chapterIdxs: chapterIdxs });
+  }
+
+  function startWeakTest(){
+    const map = loadWeakMap();
+    const keys = Object.keys(map);
+    if(!keys.length){
+      alert("இன்னும் பலவீன வினாக்கள் இல்லை. சில தேர்வுகளை எழுதுங்கள் — தவறான விடைகள் இங்கே மறுபார்வைக்காகத் தோன்றும்.");
+      return;
+    }
+    const list = keys.map(k => {
+      const w = map[k];
+      return { q: w.q, img: w.img, options: w.options, answer: w.answer, _ch: w.ch, _qi: w.qi };
+    });
+    const label = "பலவீன வினாக்கள் மறுபார்வை · " + list.length + " வினாக்கள்";
+    beginTest(list, label, "weak", {});
+  }
+
+  function restartCurrentTest(){
+    if(state.testType === "mixed") startMixedTest(state.testMeta.count);
+    else if(state.testType === "custom") startCustomTest(state.testMeta.chapterIdxs);
+    else if(state.testType === "weak") startWeakTest();
+    else startTest(state.chapterIndex);
+  }
+
+  // ---------- Test Mode UI ----------
+  function togglePanel(id){
+    ["panelMixed","panelCustom"].forEach(p => {
+      if(p === id) el(p).classList.toggle("d-none");
+      else el(p).classList.add("d-none");
+    });
+  }
+
+  function buildCustomChapterList(){
+    const container = el("customChapterList");
+    container.innerHTML = "";
+    QUESTION_BANK.forEach((ch, idx) => {
+      const row = document.createElement("label");
+      row.className = "custom-chapter-item";
+      row.innerHTML = `
+        <input type="checkbox" class="custom-chk" data-idx="${idx}">
+        <span class="cc-title">${ch.chapter}</span>
+        <span class="cc-count">${ch.questions.length}</span>
+      `;
+      container.appendChild(row);
+    });
+    container.querySelectorAll(".custom-chk").forEach(chk => {
+      chk.addEventListener("change", updateCustomTotal);
+    });
+    updateCustomTotal();
+  }
+
+  function updateCustomTotal(){
+    const checked = Array.from(el("customChapterList").querySelectorAll(".custom-chk:checked"));
+    const totalQ = checked.reduce((sum, chk) => sum + QUESTION_BANK[+chk.dataset.idx].questions.length, 0);
+    el("customTotalCount").textContent = checked.length + " பாடங்கள் · " + totalQ + " வினாக்கள் தேர்ந்தெடுக்கப்பட்டன";
+  }
+
+  el("btnModeMixed").addEventListener("click", () => {
+    const totalQ = QUESTION_BANK.reduce((s, c) => s + c.questions.length, 0);
+    const input = el("mixedCount");
+    input.max = totalQ;
+    if(!input.value || +input.value > totalQ) input.value = Math.min(25, totalQ);
+    togglePanel("panelMixed");
+  });
+  el("btnModeCustom").addEventListener("click", () => {
+    buildCustomChapterList();
+    togglePanel("panelCustom");
+  });
+  el("btnModeWeak").addEventListener("click", () => startWeakTest());
+  el("btnSelectAll").addEventListener("click", () => {
+    el("customChapterList").querySelectorAll(".custom-chk").forEach(c => c.checked = true);
+    updateCustomTotal();
+  });
+  el("btnSelectNone").addEventListener("click", () => {
+    el("customChapterList").querySelectorAll(".custom-chk").forEach(c => c.checked = false);
+    updateCustomTotal();
+  });
+  el("btnStartCustom").addEventListener("click", () => {
+    const idxs = Array.from(el("customChapterList").querySelectorAll(".custom-chk:checked")).map(c => +c.dataset.idx);
+    startCustomTest(idxs);
+  });
+  el("btnStartMixed").addEventListener("click", () => {
+    const n = parseInt(el("mixedCount").value, 10) || 25;
+    startMixedTest(n);
+  });
+
+
+
+  function renderQuestion(){
+    const total = state.questions.length;
+    const idx = state.currentQ;
+    const q = state.questions[idx];
+
+    el("testQCount").textContent = `Question ${idx + 1} of ${total}`;
+    el("progressFill").style.width = `${((idx + 1) / total) * 100}%`;
+    el("qNumber").textContent = `Q${idx + 1}`;
+    if(q.img){
+      el("qText").innerHTML = `<img class="q-img" src="${q.img}" alt="Question ${idx + 1}" onerror="this.outerHTML='<div class=&quot;img-missing&quot;>Image not found: ${q.img}</div>'">`;
+    } else {
+      el("qText").textContent = q.q;
+    }
+
+    const list = el("optionsList");
+    list.innerHTML = "";
+    list.classList.toggle("img-options", !!q.img);
+    const letters = ["A","B","C","D"];
+    q.options.forEach((opt, i) => {
+      const row = document.createElement("label");
+      row.className = "option-item" + (state.answers[idx] === i ? " selected" : "");
+      row.innerHTML = `
+        <input type="radio" name="q${idx}" value="${i}" ${state.answers[idx] === i ? "checked" : ""}>
+        <span class="option-label">${q.img ? "<strong>" + opt + "</strong>" : "<strong>" + letters[i] + ".</strong> " + opt}</span>
+      `;
+      row.addEventListener("click", () => {
+        state.answers[idx] = i;
+        renderQuestion();
+      });
+      list.appendChild(row);
+    });
+
+    el("btnPrev").disabled = idx === 0;
+    el("btnPrev").style.visibility = idx === 0 ? "hidden" : "visible";
+
+    const isLast = idx === total - 1;
+    el("btnNext").classList.toggle("d-none", isLast);
+    el("btnFinish").classList.toggle("d-none", !isLast);
+  }
+
+  el("btnPrev").addEventListener("click", () => {
+    if(state.currentQ > 0){ state.currentQ--; renderQuestion(); }
+  });
+  el("btnNext").addEventListener("click", () => {
+    if(state.currentQ < state.questions.length - 1){ state.currentQ++; renderQuestion(); }
+  });
+  el("btnFinish").addEventListener("click", () => {
+    const unanswered = state.answers.filter(a => a === null).length;
+    let msg = "இப்போது பதில்களைச் சமர்ப்பிக்கவா?";
+    if(unanswered > 0){
+      msg = `உங்களுக்கு ${unanswered} வினாக்களுக்குப் பதில் அளிக்கப்படவில்லை. இருப்பினும் சமர்ப்பிக்கவா?`;
+    }
+    if(confirm(msg)){
+      finishTest();
+    }
+  });
+
+  // ---------- Result ----------
+  function finishTest(){
+    const total = state.questions.length;
+    let correct = 0;
+    state.questions.forEach((q, i) => {
+      if(state.answers[i] === q.answer) correct++;
+    });
+    const wrong = total - correct;
+    const pct = Math.round((correct / total) * 100);
+    const grade = gradeFor(pct);
+    const chapterName = state.testLabel;
+
+    el("resultChapter").textContent = chapterName;
+    el("rsName").textContent = state.student.name;
+    el("rsSchool").textContent = state.student.school;
+    el("rsClass").textContent = state.student.cls || "-";
+    el("rsReg").textContent = state.student.reg || "-";
+
+    el("stTotal").textContent = total;
+    el("stCorrect").textContent = correct;
+    el("stWrong").textContent = wrong;
+    el("scorePercent").textContent = `${pct}%`;
+    el("scoreGrade").textContent = `Grade ${grade}`;
+
+    const circumference = 377;
+    const offset = circumference - (circumference * pct / 100);
+    const ring = el("ringFg");
+    ring.style.strokeDashoffset = circumference;
+    ring.style.stroke = pct >= 40 ? "url(#scoreGradGood)" : "url(#scoreGradBad)";
+    requestAnimationFrame(() => { ring.style.strokeDashoffset = offset; });
+
+    updateWeakFromResult();
+    showView("view-result");
+    sendResultToSheet({
+      subject: SUBJECT_LABEL,
+      medium: MEDIUM_LABEL,
+      testType: state.testType,
+      name: state.student.name,
+      school: state.student.school,
+      cls: state.student.cls,
+      reg: state.student.reg,
+      chapter: chapterName,
+      total: total,
+      correct: correct,
+      wrong: wrong,
+      percent: pct,
+      grade: grade,
+      timestamp: new Date().toISOString()
+    });
+  }
+
+  function gradeFor(pct){
+    if(pct >= 90) return "A+";
+    if(pct >= 80) return "A";
+    if(pct >= 70) return "B+";
+    if(pct >= 60) return "B";
+    if(pct >= 50) return "C";
+    if(pct >= 35) return "D";
+    return "F";
+  }
+
+  // ---------- Google Sheets submission ----------
+  function sendResultToSheet(payload){
+    const statusEl = el("sheetSaveStatus");
+    if(!SHEETS_API_URL || SHEETS_API_URL.indexOf("PASTE_YOUR") === 0){
+      if(statusEl){
+        statusEl.textContent = "முடிவு இணையத்தில் சேமிக்கப்படவில்லை (Google Sheets இணைப்பு இன்னும் அமைக்கப்படவில்லை).";
+        statusEl.classList.add("status-warn");
+      }
+      return;
+    }
+    if(statusEl){
+      statusEl.textContent = "முடிவு சேமிக்கப்படுகிறது…";
+      statusEl.classList.remove("status-warn", "status-ok", "status-error");
+    }
+    fetch(SHEETS_API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    }).then(() => {
+      if(statusEl){
+        statusEl.textContent = "✓ முடிவு வகுப்புப் பதிவேட்டில் சேமிக்கப்பட்டது.";
+        statusEl.classList.add("status-ok");
+      }
+    }).catch(() => {
+      if(statusEl){
+        statusEl.textContent = "முடிவை இணையத்தில் சேமிக்க முடியவில்லை (அச்சிடலாம் / பதிவிறக்கலாம்).";
+        statusEl.classList.add("status-error");
+      }
+    });
+  }
+
+  el("btnPrint").addEventListener("click", () => window.print());
+  el("btnDownload").addEventListener("click", () => {
+    alert("உங்கள் உலாவியின் அச்சிடல் சாளரம் திறக்கும் — இலக்காக \"Save as PDF\" ஐத் தேர்ந்தெடுக்கவும்.");
+    window.print();
+  });
+  el("btnRestart").addEventListener("click", () => restartCurrentTest());
+  el("btnRestart2").addEventListener("click", () => restartCurrentTest());
+  el("btnBackToChapters").addEventListener("click", () => showView("view-chapters"));
+
+  // ---------- Review ----------
+  el("btnReview").addEventListener("click", () => {
+    buildReview();
+    showView("view-review");
+  });
+
+  function buildReview(){
+    const container = el("reviewList");
+    container.innerHTML = "";
+    const letters = ["A","B","C","D"];
+
+    state.questions.forEach((q, idx) => {
+      const selected = state.answers[idx];
+      const isCorrect = selected === q.answer;
+
+      const item = document.createElement("div");
+      item.className = "review-item";
+
+      let optionsHtml = "";
+      q.options.forEach((opt, i) => {
+        let cls = "review-option";
+        if(i === q.answer) cls += " correct-answer";
+        else if(i === selected) cls += " wrong-selected";
+        optionsHtml += q.img
+          ? `<div class="${cls}">${opt}</div>`
+          : `<div class="${cls}">${letters[i]}. ${opt}</div>`;
+      });
+
+      const qBody = q.img
+        ? `<img class="q-img" src="${q.img}" alt="Question ${idx + 1}" onerror="this.outerHTML='<div class=&quot;img-missing&quot;>Image not found: ${q.img}</div>'">`
+        : `<p class="rq-text">${q.q}</p>`;
+
+      item.innerHTML = `
+        <div class="rq-head">
+          <div style="flex:1;min-width:0;">
+            <div class="rq-num">Question ${idx + 1}</div>
+            ${qBody}
+          </div>
+          <span class="review-icon ${isCorrect ? "correct" : "wrong"}">${isCorrect ? "&#9989;" : "&#10060;"}</span>
+        </div>
+        <div class="review-options${q.img ? " img-review-options" : ""}">${optionsHtml}</div>
+        ${selected === null ? '<span class="unanswered-tag">பதில் அளிக்கப்படவில்லை</span>' : ""}
+      `;
+      container.appendChild(item);
+    });
+  }
+
+  } catch(err){
+    showFatalError(err.message);
+  }
+
+})();
+
+</script>
+</body>
+</html>
